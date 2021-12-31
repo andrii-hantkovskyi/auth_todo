@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    {% for todo in todos %}
+        <div>
+<span style="
+        {% if todo.is_completed %}
+            text-decoration: line-through
+        {% else %}
+            text-decoration: none
+        {% endif %}
+        ; font-size: 24px">
+    {{ todo.content }} <a href="{% url 'remove-todo' todo_id=todo.id %}"><button style="background: red">X</button></a></span>
+        </div>
+    {% endfor %}
+
+{% endblock %}
