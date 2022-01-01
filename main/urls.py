@@ -8,5 +8,5 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('register/', register_view, name='register'),
     path('add-todo/', add_todo, name='add-todo'),
-    path('remove-todo/<int:todo_id>', remove_todo, name='remove-todo')
+    path('remove-todo/<int:todo_id>/', remove_todo, name='remove-todo')
 ]
