@@ -61,7 +61,7 @@ def logout_view(request):
 
 def add_todo(request):
     if not request.user.is_authenticated:
-        return redirect(to='home', permanent=True)
+        return redirect(to='login')
     if request.method == 'POST':
         form = AddTodoForm(request.POST)
         if form.is_valid():
